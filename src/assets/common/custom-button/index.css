@@ -1,0 +1,37 @@
+.custom-button-login {
+    color: gray;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border: none;
+ }
+ .custom-button {
+    padding: 10px 20px;
+    background-color: rgb(106, 151, 151);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+ }
+ 
+ .custom-button-login:hover {
+    background-color: rgb(28, 129, 129);
+    padding: 8px 20px;
+    border-radius: 5px;
+    transform: scale(1.07);
+ }
+ 
+ .custom-button:hover {
+    background-color: rgb(28, 129, 129);
+    transform: scale(1.07);
+ }
+ 
+ .custom-button-post {
+    background-color: #ffffff;
+    color: rgb(86, 131, 131);
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+ }
+ 
