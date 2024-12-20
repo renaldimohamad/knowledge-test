@@ -1,0 +1,9 @@
+.icons-trash {
+    color: rgb(250, 120, 120);
+ }
+ 
+ .custom-input-with-button::placeholder {
+    color: #6c757d;
+    font-weight: bold;
+ }
+ 
