@@ -26,7 +26,7 @@ export const login = async (req: Request, res: Response) => {
 
       res.status(200).json({
          message: "User logged in successfully",
-         data: user,
+         token: user,
       })
    } catch (error) {
       errorHandler(res, error as unknown as Error)
@@ -38,9 +38,12 @@ export const checkAuth = async (req: Request, res: Response) => {
       const user = res.locals.user
 
       res.json({
-         data: user,
+         id: user.id,
+         email: user.email,
+         gender: user.gender,
+         userName: user.userName,
       })
    } catch (error) {
-      errorHandler(res, error as unknown as Error)
+      res.status(500).json({message: "Interval server error"})
    }
 }
