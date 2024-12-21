@@ -1,4 +1,9 @@
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import {
+   BrowserRouter as Router,
+   Routes,
+   Route,
+   Navigate,
+} from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import {useEffect, useState} from "react"
 import "./App.css"
@@ -18,7 +23,7 @@ function App() {
    async function checkAuth() {
       const token = localStorage.getItem("token")
       if (!token) {
-         return
+         return <Navigate to="/" />
       }
 
       try {
