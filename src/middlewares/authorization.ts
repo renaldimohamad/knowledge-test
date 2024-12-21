@@ -10,8 +10,6 @@ export default async (req: Request, res: Response, next: NextFunction) => {
       return
    }
 
-   console.log(token)
-
    const payload = jwt.verify(token, process.env.SECRET_KEY || "secret")
 
    if (!payload) {
