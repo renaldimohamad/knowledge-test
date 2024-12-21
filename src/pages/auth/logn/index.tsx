@@ -76,8 +76,9 @@ export const Login = () => {
                               render={({field}) => (
                                  <>
                                     <CustomInput
-                                       placeholder="Password"
+                                       placeholder="password"
                                        type="password"
+                                       autoComplete="off"
                                        {...field}
                                     />
                                     {errors.password && (
