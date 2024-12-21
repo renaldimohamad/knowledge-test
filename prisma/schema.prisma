@@ -9,11 +9,12 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
-model user {
+model User {
   id       Int      @id @default(autoincrement())
   userName String
   gender   String
@@ -29,5 +30,5 @@ model Posts {
   isRead   Boolean  @default(false)
   userId   Int
   createAt DateTime @default(now())
-  author   user     @relation(fields: [userId], references: [id])
+  author   User     @relation(fields: [userId], references: [id])
 }
