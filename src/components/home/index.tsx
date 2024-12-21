@@ -1,17 +1,9 @@
 import {Container} from "react-bootstrap"
-import {Navigate} from "react-router-dom"
-import useStore from "../../stores/hook"
 import {HeaderSection} from "../../pages/home/header-section"
 import {LogoRow} from "../../pages/home/logo-row"
 import {CardCarousel} from "../../pages/home/card-carousel"
 
 const Index = () => {
-   const {isLogin} = useStore()
-
-   if (isLogin) {
-      return <Navigate to="/todo" />
-   }
-
    const logoRow = [
       {
          photos:
