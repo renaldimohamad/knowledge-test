@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
 import todoLogo from "/src/assets/images/todo-photo.png"
 import "./index.css"
-import {NavbarBrand} from "react-bootstrap"
+import {Collapse, NavbarBrand} from "react-bootstrap"
 import useStore from "../../../stores/hook"
 import {CustomButton} from "../custom-button"
 import {CustomDropdown} from "../dropdown"
@@ -33,13 +33,14 @@ const Navigation = () => {
                      </div>
                   </NavbarBrand>
                </div>
-               <div className="justify-content-end">
-                  {isLogin ? (
-                     <>
-                        <CustomDropdown />
-                     </>
-                  ) : (
-                     <>
+               {isLogin ? (
+                  <>
+                     <CustomDropdown />
+                  </>
+               ) : (
+                  <>
+                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                     <Navbar.Collapse className="justify-content-end">
                         <CustomButton
                            customtext={"Login"}
                            className="custom-button-login me-3 rounded-5"
@@ -50,9 +51,9 @@ const Navigation = () => {
                            className="custom-button px-4 py-2 rounded-5"
                            path="/auth/register"
                         />
-                     </>
-                  )}
-               </div>
+                     </Navbar.Collapse>
+                  </>
+               )}
             </Container>
          </Navbar>
       </div>
