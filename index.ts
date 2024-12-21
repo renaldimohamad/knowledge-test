@@ -1,4 +1,4 @@
-import express, {Request, Response} from "express"
+import express, {Request, Response, Router} from "express"
 import dotenv from "dotenv"
 import router from "./src/routes"
 import db from "./src/libs/db"
@@ -7,13 +7,15 @@ import cors from "cors"
 dotenv.config()
 
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT || 2000
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cors())
 app.get("/", (req: express.Request, res: express.Response) => {
-   res.send("Express + TypeScript Server")
+   res.send({
+      message: "to do server",
+   })
 })
 
 app.use(router)
