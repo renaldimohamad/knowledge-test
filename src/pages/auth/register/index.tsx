@@ -116,6 +116,7 @@ export const Register = () => {
                                        placeholder="Password"
                                        type="password"
                                        {...field}
+                                       autoComplete="off"
                                     />
                                     {errors.password && (
                                        <FormText className="text-danger">
