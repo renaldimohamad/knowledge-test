@@ -14,7 +14,7 @@ const Index = ({setShowNavbar}: any) => {
    }, [setShowNavbar])
 
    if (isLogin) {
-      return <Navigate to="/posts" />
+      return <Navigate to="/todo" />
    }
 
    return (
