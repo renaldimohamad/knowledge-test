@@ -7,7 +7,6 @@ export const usePostsHandler = (userId: number) => {
    const [posts, setPosts] = useState<IPostModel[]>([])
    const [updatedPost, setUpdatedPost] = useState<number | null>(null)
 
-   // Fetch all posts
    const fetchPosts = useCallback(async () => {
       try {
          const res = await postFunc.getAllpost(userId)
@@ -17,7 +16,6 @@ export const usePostsHandler = (userId: number) => {
       }
    }, [postFunc, userId])
 
-   // Create or update post
    const handlePostSubmit = async (data: IPostForm) => {
       if (updatedPost) {
          await postFunc.updatePost(updatedPost, data)
@@ -29,13 +27,11 @@ export const usePostsHandler = (userId: number) => {
       await fetchPosts()
    }
 
-   // Delete post
    const handlePostDelete = async (id: number) => {
       await postFunc.removePost(id)
       await fetchPosts()
    }
 
-   // Edit post
    const handlePostEdit = async (
       post: IPostModel,
       setValue: any,
@@ -49,7 +45,6 @@ export const usePostsHandler = (userId: number) => {
       }
    }
 
-   // Toggle read status
    const toggleReadStatus = async (id: number) => {
       try {
          const updatedPost = await postFunc.toggleReadStatus(id)
@@ -63,10 +58,9 @@ export const usePostsHandler = (userId: number) => {
       }
    }
 
-   // Initial fetch
    useEffect(() => {
       fetchPosts()
-   }, [fetchPosts])
+   }, [])
 
    return {
       posts,
