@@ -46,7 +46,9 @@ const Index = () => {
                )}
             </div>
             <h6>Simplified Organization, Outstanding Results.</h6>
-            <h5>Plan Your Day, One Task at a Time</h5>
+            <p className="font-weight-bold text-muted">
+               Plan Your Day, One Task at a Time
+            </p>
             <Col md={12} className="d-flex justify-content-center mt-3">
                <Card className="todo-card shadow-lg px-3">
                   <Card.Header className="bg-white">
