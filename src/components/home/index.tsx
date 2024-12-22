@@ -1,4 +1,4 @@
-import {Carousel, Container} from "react-bootstrap"
+import {Carousel, Collapse, Container} from "react-bootstrap"
 import "./index.css"
 import useStore from "../../stores/hook"
 import {Navigate} from "react-router-dom"
@@ -49,7 +49,7 @@ const Index = () => {
          alt: "Third slide",
          title: "Streamline Your Teamwork",
          content:
-            "Easily organize tasks, share updates, and collaborate with your team in one place. Boost productivity with real-time tracking and seamless integration.",
+            "Stay on track, meet deadlines, and achieve more together—because teamwork makes the dream work!",
       },
       {
          id: 2,
@@ -57,7 +57,7 @@ const Index = () => {
          alt: "Third slide",
          title: "Design with Ease",
          content:
-            "Create stunning visuals effortlessly using tools like Canva. Simplify your design process and unlock creativity with ready-to-use templates.",
+            "Unleash your creativity without the hassle. Design, innovate, and inspire effortlessly!",
       },
       {
          id: 3,
@@ -65,7 +65,7 @@ const Index = () => {
          alt: "Third slide",
          title: "  Elevate Your Workflow",
          content:
-            "Enhance your brand’s visibility and engage with your audience through Glossier’s innovative tools. Build trust, connect, and grow.",
+            "Boost your brand and connect like never before. Take your projects to the next level with innovative tools.",
       },
       {
          id: 4,
@@ -73,7 +73,7 @@ const Index = () => {
          alt: "Third slide",
          title: "Collaborate with your team",
          content:
-            "Combine powerful tools like Slack and Jira to achieve new heights in efficiency. Simplify project management and stay on top of deadlines.",
+            "Work smarter, not harder. Sync with your team and hit every milestone with ease",
       },
    ]
 
@@ -119,24 +119,41 @@ const Index = () => {
                      )
                   })}
                </div>
-
-               <Carousel data-bs-theme="dark" interval={3000}>
-                  {cardContent.map((card, index) => (
-                     <Carousel.Item key={index} style={{position: "relative"}}>
-                        <Carousel.Caption
-                           style={{
-                              position: "absolute",
-                              zIndex: 0,
-                           }}
+               <div className="card-content">
+                  <Carousel interval={3000}>
+                     {cardContent.map((card, index) => (
+                        <Carousel.Item
+                           key={index}
+                           style={{position: "relative"}}
                         >
-                           <div className="d-flex flex-column justify-content-center align-items-center ">
-                              <h5>{card.title}</h5>
-                              <p>{card.content}</p>
-                           </div>
-                        </Carousel.Caption>
-                     </Carousel.Item>
-                  ))}
-               </Carousel>
+                           <Carousel.Caption
+                              style={{
+                                 position: "absolute",
+                                 zIndex: 0,
+                              }}
+                           >
+                              <div className="d-flex flex-column justify-content-center align-items-center ">
+                                 <h5
+                                    style={{
+                                       color: "gray",
+                                       fontWeight: "bold",
+                                    }}
+                                 >
+                                    {card.title}
+                                 </h5>
+                                 <p
+                                    style={{
+                                       color: "gray",
+                                    }}
+                                 >
+                                    {card.content}
+                                 </p>
+                              </div>
+                           </Carousel.Caption>
+                        </Carousel.Item>
+                     ))}
+                  </Carousel>
+               </div>
             </Container>
          </div>
       </>

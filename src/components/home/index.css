@@ -29,6 +29,11 @@
     .text-responsive p {
        font-size: 0.9rem;
     }
+    
+    .card-content {
+      display: none;
+    }
+    
  }
  
  @media (max-width: 576px) {
