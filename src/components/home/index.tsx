@@ -1,4 +1,4 @@
-import {Carousel, Collapse, Container} from "react-bootstrap"
+import {Carousel, Container} from "react-bootstrap"
 import "./index.css"
 import useStore from "../../stores/hook"
 import {Navigate} from "react-router-dom"
